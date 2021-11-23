@@ -3,11 +3,13 @@
 const mongoose = require("mongoose")
 const Book = require("./../models/Book")
 
+require("dotenv").config()
+
 //console.log(Book)
 
 // 2. Conexión a base de datos de manera independiente. 
 
-mongoose.connect("mongodb+srv://Kurai_Tsukino:FUGmTKSmHL8yn8A@cluster0.hptoy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
